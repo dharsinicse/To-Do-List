@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <div class="todo-container gradient-background">
+    <h1>To-Do List</h1>
+    
+    <div class="category-section">
+      <label for="categorySelect">Category:</label>
+      <select id="categorySelect">
+        <option value="General">General</option>
+        <option value="Work">Work</option>
+        <option value="Personal">Personal</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="filters">
+      <button id="filterAll">All</button>
+      <button id="filterImportant">Important</button>
+      <button id="filterToDo">To-Do</button>
+      <button id="filterActive">In-active</button>
+      <button id="filterDone">Completed</button>
+      <button id="resetFilters">Reset</button>
+    </div>
+
+    <div class="progress-circle-container">
+      <svg class="progress-circle" width="120" height="120">
+        <circle class="bg" cx="60" cy="60" r="50" />
+        <circle class="progress" cx="60" cy="60" r="50" />
+      </svg>
+      <div class="progress-text" id="progressText">0%</div>
+    </div>
+
+    <form class="input-section" id="taskForm">
+      <input type="text" id="taskInput" placeholder="Add your task here..." required>
+      <div class="calendar-wrapper">
+        <i class="fas fa-calendar-alt" onclick="toggleCalendar()"></i>
+        <input type="date" id="calendar">
+      </div>
+      <button type="submit">Add</button>
+    </form>
+
+    <audio id="bubbleSound" src="bubble.wav" preload="auto"></audio>
+
+    <div class="form-row">
+      <label><input type="checkbox" id="importantCheckbox"> Mark as important</label>
+    </div>
+
+    <ul id="taskList"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
